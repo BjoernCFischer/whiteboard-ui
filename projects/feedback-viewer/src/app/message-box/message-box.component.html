@@ -1,0 +1,10 @@
+<div class="speech-wrapper">
+  <div class="bubble" [class.alt]="odd" *ngFor="let item of messages; let odd = odd">
+    <div class="txt">
+      <p class="name" [class.alt]="odd">{{item.author | name}}</p>
+      <p class="message">{{item.content}}</p>
+      <span class="timestamp">{{item.timestamp | date : 'dd.MM.yyyy HH:mm:ss'}}</span>
+    </div>
+    <div class="bubble-arrow" [class.alt]="odd"></div>
+  </div>
+</div>

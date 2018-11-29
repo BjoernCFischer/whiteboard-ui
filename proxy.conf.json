@@ -1,0 +1,28 @@
+{
+  "/time": {
+    "target": "https://whiteboard42.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/messages": {
+    "target": "https://whiteboard42.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/addmessage": {
+    "target": "https://whiteboard42.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/clearmessages": {
+    "target": "https://whiteboard42.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/messagesnosse": {
+    "target": "https://whiteboard42.herokuapp.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

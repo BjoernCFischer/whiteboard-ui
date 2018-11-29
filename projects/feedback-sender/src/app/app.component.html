@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <img src="assets/logo.png" height="50">
+  <span>Feedback</span>
+</mat-toolbar>
+
+<form class="container" (submit)="onSendMessage()" #feedback="ngForm">
+  <div class="row">
+    <div class="col-12">
+      <h3>Hier hast du die Möglichkeit, Feedback zu meinem Vortrag loszuwerden.</h3>
+      <mat-form-field class="example-full-width">
+        <input name="author" matInput placeholder="Name..." [(ngModel)]="author" [disabled]="!authorEditable" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea name="message" matInput rows="5" placeholder="Meine Frage lautet..." [(ngModel)]="message" required></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button type="submit" mat-button [disabled]="disabled || !feedback.form.valid">Absenden <span class="badge" *ngIf="disabled">{{wait}}</span></button>
+    </div>
+  </div>
+</form>
+

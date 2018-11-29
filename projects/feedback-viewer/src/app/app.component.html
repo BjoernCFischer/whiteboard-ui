@@ -1,0 +1,9 @@
+<mat-toolbar>
+  <img src="assets/logo.png" height="50">
+  <span class="fill-remaining-space">Viewer</span>
+  <span><button mat-button (click)="onResetMessages()">X</button></span>
+</mat-toolbar>
+
+<div class="message-panel">
+  <sse-message-box [messages]="messages$ | async"></sse-message-box>
+</div>

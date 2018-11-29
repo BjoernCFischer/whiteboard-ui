@@ -1,0 +1,270 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "defaultProject": "feedback-viewer",
+  "projects": {
+    "feedback-viewer": {
+      "root": "projects/feedback-viewer/",
+      "sourceRoot": "projects/feedback-viewer/src",
+      "projectType": "application",
+      "prefix": "sse",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/feedback-viewer",
+            "index": "projects/feedback-viewer/src/index.html",
+            "main": "projects/feedback-viewer/src/main.ts",
+            "polyfills": "projects/feedback-viewer/src/polyfills.ts",
+            "tsConfig": "projects/feedback-viewer/tsconfig.app.json",
+            "assets": [
+              "projects/feedback-viewer/src/favicon.ico",
+              "projects/feedback-viewer/src/assets"
+            ],
+            "styles": [
+              "projects/feedback-viewer/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/feedback-viewer/src/environments/environment.ts",
+                  "with": "projects/feedback-viewer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "feedback-viewer:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "feedback-viewer:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "feedback-viewer:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/feedback-viewer/src/test.ts",
+            "polyfills": "projects/feedback-viewer/src/polyfills.ts",
+            "tsConfig": "projects/feedback-viewer/tsconfig.spec.json",
+            "karmaConfig": "projects/feedback-viewer/karma.conf.js",
+            "styles": [
+              "projects/feedback-viewer/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/feedback-viewer/src/favicon.ico",
+              "projects/feedback-viewer/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/feedback-viewer/tsconfig.app.json",
+              "projects/feedback-viewer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "feedback-viewer-e2e": {
+      "root": "projects/feedback-viewer-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/feedback-viewer-e2e/protractor.conf.js",
+            "devServerTarget": "feedback-viewer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "feedback-viewer:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/feedback-viewer-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "feedback-sender": {
+      "root": "projects/feedback-sender/",
+      "sourceRoot": "projects/feedback-sender/src",
+      "projectType": "application",
+      "prefix": "sse",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/feedback-sender",
+            "index": "projects/feedback-sender/src/index.html",
+            "main": "projects/feedback-sender/src/main.ts",
+            "polyfills": "projects/feedback-sender/src/polyfills.ts",
+            "tsConfig": "projects/feedback-sender/tsconfig.app.json",
+            "assets": [
+              "projects/feedback-sender/src/favicon.ico",
+              "projects/feedback-sender/src/assets"
+            ],
+            "styles": [
+              "projects/feedback-sender/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/feedback-sender/src/environments/environment.ts",
+                  "with": "projects/feedback-sender/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "feedback-sender:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "feedback-sender:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "feedback-sender:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/feedback-sender/src/test.ts",
+            "polyfills": "projects/feedback-sender/src/polyfills.ts",
+            "tsConfig": "projects/feedback-sender/tsconfig.spec.json",
+            "karmaConfig": "projects/feedback-sender/karma.conf.js",
+            "styles": [
+              "projects/feedback-sender/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/feedback-sender/src/favicon.ico",
+              "projects/feedback-sender/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/feedback-sender/tsconfig.app.json",
+              "projects/feedback-sender/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "feedback-sender-e2e": {
+      "root": "projects/feedback-sender-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/feedback-sender-e2e/protractor.conf.js",
+            "devServerTarget": "feedback-sender:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "feedback-sender:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/feedback-sender-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

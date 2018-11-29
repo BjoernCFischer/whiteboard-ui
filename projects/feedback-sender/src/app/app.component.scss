@@ -1,0 +1,21 @@
+.container {
+  margin-top: 9px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.badge {
+  background: #000;
+  color: #FFF;
+  border-radius: 1rem;
+  padding: 0 .5rem;
+
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 900px;
+  }
+}
